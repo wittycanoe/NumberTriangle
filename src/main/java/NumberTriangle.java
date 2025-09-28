@@ -94,13 +94,12 @@ public class NumberTriangle {
             return this.root;
         }
 
-        NumberTriangle current = new NumberTriangle(this.root);
+        NumberTriangle current = this;
         for (int i = 0; i < path.length(); i++) {
             if (path.charAt(i) == 'l') {
-                current = this.left;
-            }
-            else {
-                current = this.right;
+                current = current.left;
+            } else {
+                current = current.right;
             }
         }
 
